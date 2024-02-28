@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FrenchTerritories } from 'src/app/Model/FrenchTerritories';
 import { HolidaysService } from 'src/app/services/holidays.service';
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-holidays',
@@ -17,8 +18,10 @@ export class HolidaysComponent implements OnInit {
   public minYear: number;
   public maxYear: number;
 
-  constructor(private route: ActivatedRoute, private holidaysService: HolidaysService, private router: Router) {
+  constructor(private route: ActivatedRoute, private holidaysService: HolidaysService, private router: Router, private translate: TranslateService) {
 
+    translate.setDefaultLang('en');
+    translate.use('en');
     const currentYear = new Date().getFullYear();
     this.minYear = currentYear - 24;
     this.maxYear = currentYear + 4;
@@ -51,5 +54,10 @@ export class HolidaysComponent implements OnInit {
     console.log(currentYear, minYear, maxYear, year);
 
     return year >= minYear && year <= maxYear;
+  }
+
+  switchLang(e: Event) {
+    const target = e.target as HTMLTextAreaElement
+    this.translate.use(target.value);
   }
 }

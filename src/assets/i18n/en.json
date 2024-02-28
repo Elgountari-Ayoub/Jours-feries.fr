@@ -1,0 +1,7 @@
+{
+    "app.title": "Holidays",
+    "app.select.zone": "Select a French Territory",
+    "app.select.date": "Enter a Date",
+    "app.select.date.tip": "the allowed date range",
+    "app.select.button": "Fetch Holidays"
+}

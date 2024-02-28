@@ -1,0 +1,7 @@
+{
+    "app.title": "Feiertage",
+    "app.select.zone": "Wählen Sie ein französisches Territorium aus",
+    "app.select.date": "Geben Sie ein Datum ein",
+    "app.select.date.tip": "der zulässige Datumsbereich",
+    "app.select.button": "Feiertage abrufen"
+}

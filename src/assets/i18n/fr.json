@@ -1,0 +1,8 @@
+{
+    "app.title": "Les Jours Firies",
+    "app.select.zone": "Sélectionnez une région française",
+    "app.select.date": "Entrez une date",
+    "app.select.date.tip": "la date autorisée est",
+    "app.select.button": "Récupérer les jours fri"
+
+}

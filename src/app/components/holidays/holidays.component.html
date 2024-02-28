@@ -1,8 +1,19 @@
-<div class="flex items-center justify-center">
+<div class="flex flex-row items-center justify-center fixed right-0 p-2 m-2">
+    <select
+        class="bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        (change)="switchLang($event)">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+    </select>
+</div>
+
+<div class="flex flex-col items-center justify-center">
+    <h1 class="text-xl font-bold mb-8 mt-4 tracking-widest">{{ 'app.title' | translate}}</h1>
     <div class="w-96 bg-white shadow-md rounded-lg p-6">
         <div class="mb-4">
             <label for="zone" class="block text-gray-700 text-sm font-bold mb-2">
-                Select a French Territory:
+                {{'app.select.zone' | translate}}
             </label>
             <select id="zone"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -13,18 +24,18 @@
         </div>
         <div>
             <label for="date" class="block text-gray-700 text-sm font-bold mb-2">
-                Enter a Date:
+                {{'app.select.date' | translate}}
             </label>
             <input type="number" id="date"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                [(ngModel)]="year" [min]="minYear" [max]="maxYear" required >
-                <span class="text-xs text-gray-500 ">the allowed date range {{minYear}} - {{maxYear}}</span>
+                [(ngModel)]="year" [min]="minYear" [max]="maxYear" required>
+            <span class="text-xs text-gray-500 ">{{'app.select.date.tip' | translate}} {{minYear}} - {{maxYear}}</span>
         </div>
 
         <div class="flex items-center justify-end mt-4">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 (click)="fetchHolidays()">
-                Fetch Holidays
+                {{'app.select.button' | translate}}
             </button>
         </div>
     </div>
