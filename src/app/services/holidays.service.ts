@@ -9,8 +9,13 @@ export class HolidaysService {
   private baseUrl: string = 'https://calendrier.api.gouv.fr/jours-feries/'
 
   constructor(private http: HttpClient) { }
-  getHolidaysByZone(zone: string): Observable<any> {
-    return this.http.get(this.baseUrl + zone);
+  getHolidays(zone: string, year?: number): Observable<any> {
+    // if year is a number had a valid year
+    if (year === undefined) {
+      return this.http.get(`${this.baseUrl}${zone}.json`);
+    } else {
+      return this.http.get(`${this.baseUrl}${zone}/${year}.json`);
+    }
   }
 
 }
