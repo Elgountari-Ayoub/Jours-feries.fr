@@ -32,7 +32,7 @@ export class HolidaysComponent implements OnInit {
     if (this.zone && this.year !== undefined && this.isYearInRange(this.year)) {
       this.getHolidays(this.zone, this.year);
     } else {
-      alert('Please select a valid French territory and year within the allowed range.');
+      alert('Veuillez sélectionner un territoire français valide et une année dans la plage autorisée.');
       this.holidays = [];
     }
   }
